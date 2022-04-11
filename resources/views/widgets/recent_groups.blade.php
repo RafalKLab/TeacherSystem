@@ -22,8 +22,8 @@
                         <form action="{{route('assignStudents', $group->id)}}" method="post">
                             @csrf
                             <li class="list-group-item">
-                                <select id="student_selector" name="student_id" class="form-control">
-                                    <option value="0">Assign student</option>
+                                <select id="student_selector" name="student_id" class="form-control" required>
+                                    <option value="">Assign student</option>
                                     @foreach($students as $student)
                                         @if($student->group_id == 0)
                                             <option value="{{$student->id}}" >{{$student->full_name}}</option>
