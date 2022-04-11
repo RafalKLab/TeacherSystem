@@ -26,7 +26,7 @@
                                         <a href="{{route('students.edit', $student)}}" class="btn btn-warning" type="button">Edit</a>
                                         @csrf
                                         @method('DELETE')
-                                        <input type="submit" class="btn btn-danger show_confirm" value="Delete">
+                                        <input type="submit" class="btn btn-danger" value="Delete">
                                     </form>
                                 </div>
                             </td>

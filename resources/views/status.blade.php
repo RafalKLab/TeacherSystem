@@ -6,6 +6,13 @@
                <h5 class="card-title">Project name:  <b>{{$project->name}}</b></h5>
                <h6 class="card-title">The number of groups:  <b>{{$project->groups_limit}}</b></h6>
                <h6 class="card-title">Students per group: <b>{{$project->groups()->first()->stud_per_group}}</b></h6>
+               <div class="btn-group" role="group">
+                   <form action="{{route('deleteProject')}}" method="POST">
+                       @csrf
+                       @method('DELETE')
+                       <input type="submit" class="btn btn-danger" value="Delete project">
+                   </form>
+               </div>
            </div>
        </div>
    </div>

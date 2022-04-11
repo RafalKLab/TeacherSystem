@@ -39,4 +39,11 @@ class ProjectController extends Controller
         }
         return redirect()->route('index');
     }
+
+    public function deleteProject(){
+        Group::query()->delete();
+        Project::query()->delete();
+        Student::query()->delete();
+        return redirect()->route('index');
+    }
 }

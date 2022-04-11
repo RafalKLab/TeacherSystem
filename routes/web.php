@@ -22,6 +22,7 @@ Route::get('/unassignStudents/{student_id}', [App\Http\Controllers\GroupControll
 //Main project routes
 Route::get('/', [App\Http\Controllers\ProjectController::class, 'index'])->name('index');
 Route::post('/project/set', [App\Http\Controllers\ProjectController::class, 'set'])->name('projectSet');
+Route::delete('/project/delete', [App\Http\Controllers\ProjectController::class, 'deleteProject'])->name('deleteProject');
 
 
 

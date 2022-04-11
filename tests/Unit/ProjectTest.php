@@ -52,12 +52,7 @@ class ProjectTest extends TestCase
 
     public function testProjectDeletionWithAllGroups()
     {
-        $project = Project::first();
-        foreach ($project->groups as $group){
-            $group->delete();
-        }
-        $project = Project::first();
-        $this->assertEquals(0, count($project->groups));
-        $project->delete();
+        $this->call('DELETE', route('deleteProject'));
+        $this->assertEquals(0, count(Group::all()));
     }
 }
