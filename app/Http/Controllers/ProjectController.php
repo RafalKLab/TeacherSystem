@@ -41,8 +41,11 @@ class ProjectController extends Controller
     }
 
     public function deleteProject(){
-        Group::query()->delete();
-        Project::query()->delete();
+        $project = Project::first();
+        foreach ($project->groups as $group){
+            $group->delete();
+        }
+        $project->delete();
         Student::query()->delete();
         return redirect()->route('index');
     }
