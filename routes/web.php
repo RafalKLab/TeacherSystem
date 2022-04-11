@@ -12,14 +12,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Students routes
 Route::resource('students', App\Http\Controllers\StudentController::class);
+
+//Group routes
+Route::post('/assignStudents/{id}', [App\Http\Controllers\GroupController::class, 'assignStudents'])->name('assignStudents');
+Route::get('/unassignStudents/{student_id}', [App\Http\Controllers\GroupController::class, 'unassignStudents'])->name('unassignStudents');
+
+//Main project routes
 Route::get('/', [App\Http\Controllers\ProjectController::class, 'index'])->name('index');
 Route::post('/project/set', [App\Http\Controllers\ProjectController::class, 'set'])->name('projectSet');
 
 
-Route::post('/assignStudents/{id}', [App\Http\Controllers\GroupController::class, 'assignStudents'])->name('assignStudents');
-Route::get('/unassignStudents/{student_id}', [App\Http\Controllers\GroupController::class, 'unassignStudents'])->name('unassignStudents');
 
 
 
