@@ -10,12 +10,14 @@
                    <form action="{{route('deleteProject')}}" method="POST">
                        @csrf
                        @method('DELETE')
-                       <input type="submit" class="btn btn-danger" value="Delete project">
+                       <input type="submit" class="btn btn-danger show_confirm" value="Delete project">
                    </form>
+                   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+                   <script src="{{asset('js/confirmAlert.js')}}"></script>
                </div>
            </div>
        </div>
    </div>
-        @asyncWidget('RecentStudents')
-        @asyncWidget('RecentGroups')
+        @widget('RecentStudents')
+        @widget('RecentGroups')
 @endsection

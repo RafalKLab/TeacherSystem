@@ -19,6 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//api route for student resource
 Route::apiResourceS([
    'students' => StudentController::class,
 ]);

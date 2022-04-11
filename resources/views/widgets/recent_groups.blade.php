@@ -6,7 +6,7 @@
                 <div class="card-header">
                     {{$group->name}}
                     <span class="pull-right">
-                                {{count($group->students)}} / {{$group->stud_per_group}}
+                          {{count($group->students)}} / {{$group->stud_per_group}}
                      </span>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -14,8 +14,8 @@
                         <li class="list-group-item">
                             {{$student->full_name}}
                             <span class="pull-right">
-                                        <a href="{{route('unassignStudents', $student->id)}}" style="color: #DC3545"><i class="fa fa-close"></i></a>
-                                    </span>
+                                 <a href="{{route('unassignStudents', $student->id)}}" style="color: #DC3545"><i class="fa fa-close"></i></a>
+                            </span>
                         </li>
                     @endforeach
                     @if($group->stud_per_group - count($group->students))

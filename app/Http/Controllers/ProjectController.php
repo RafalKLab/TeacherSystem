@@ -10,15 +10,16 @@ use Illuminate\Http\Request;
 class ProjectController extends Controller
 {
     public function index(){
-        $students = Student::get();
         $project = Project::first();
         if($project){
+            $students = Student::get();
             return view('status', compact('project', 'students'));
         }else{
             return view('welcome');
         }
     }
 
+    //method to set up a project and create groups
     public function set(Request $request){
         $this->validate($request,[
            'name' => 'required',
@@ -40,6 +41,7 @@ class ProjectController extends Controller
         return redirect()->route('index');
     }
 
+    //method to delete project with groups and students
     public function deleteProject(){
         $project = Project::first();
         foreach ($project->groups as $group){

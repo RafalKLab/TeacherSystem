@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StudentStoreRequest;
 use App\Http\Resources\StudentResource;
 use App\Models\Project;
 use App\Models\Student;
