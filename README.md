@@ -1,64 +1,103 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# NFQ E-commerce Software Engineering Internship 
 
-## About Laravel
+This system is developed using the PHP language framework Laravel (8.83.6). The MySql DB engine is used for data storage. 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Technical solutions
+- MVC laravel principles. System use Model Objects to manipulate data in data layer, Controller objects are used to make logical operations with requests, Views responsible for front-end part.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- One To Many Relationships: Model Project has many -> Group models, Group model -> has many Student models. This solution allows to get all groups that belong to a project as well as get all students that belong to certain groups.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- System use arrilot / laravel-widgets package to update data in status page every 10 seconds.
+- For RESTful api system use common laravel resource object
+- Automated tests are made with PHPunit
+- Front-end is made using bootstrap framework.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Requirements
+- PHP
+- MySql DB
+- Composer
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Application set up
 
-## Laravel Sponsors
+1. Clone Github repo:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+```bash
+  git clone https://github.com/RafalKLab/TeacherSystem
+```
 
-### Premium Partners
+2. Navigate to the project folder
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+```bash
+  cd TeacherSystem
+```
 
-## Contributing
+3. Install Composer dependencies
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+  composer install
+```
 
-## Code of Conduct
+4. Įdiekite NPM priklausomybes
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+  npm install
+```
 
-## Security Vulnerabilities
+5. Make a copy of .env.example file
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+  cp .env.example .env
+```
 
-## License
+6. Generate app encryption key
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+  php artisan key:generate
+```
+
+7. Create a new database for the system
+8. Add the information from the newly created database to the .env file
+
+`DB_DATABASE` = databse name 
+
+`DB_USERNAME` = databse user
+
+`DB_USERNAME` = databse password
+
+Example
+```
+DB_DATABASE=teacherSystem
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+9. Move the migration tables to the database
+
+```bash
+  php artisan migrate
+```
+
+## Application tests
+Inside the project folder, use the command:
+
+```bash
+  php artisan test
+```
+
+
+    
+## Launch application
+
+Inside the project folder, use the command:
+
+```bash
+  php artisan serve
+```
+
+
+## Authors
+
+- [@RafalKLab](https://github.com/RafalKLab)
+
