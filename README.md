@@ -39,7 +39,7 @@ This system is developed using the PHP language framework Laravel (8.83.6). The 
   composer install
 ```
 
-4. Įdiekite NPM priklausomybes
+4. Install NPM dependencies
 
 ```bash
   npm install
